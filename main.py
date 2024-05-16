@@ -10,6 +10,10 @@ SCREEN_HEIGHT = 370
 SCREEN_WIDTH = 450
 size = (SCREEN_WIDTH, SCREEN_HEIGHT)
 screen = pygame.display.set_mode(size)
+snake=0
+
+
+snake_display=snake
 
 
 r = 50
@@ -22,10 +26,12 @@ P=Pineapple(20,30)
 B = Background(40, 40)
 
 
-
+clock=pygame.time.clock()
 
 # The loop will carry on until the user exits the game (e.g. clicks the close button).
 run = True
+for event in pygame.event.get():
+    pygame.display.flip()
 
 # -------- Main Program Loop -----------
 while run:
@@ -76,4 +82,3 @@ while run:
 
 # Once we have exited the main program loop we can stop the game engine:
 pygame.quit()
-
