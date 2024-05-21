@@ -1,7 +1,6 @@
 import pygame
 import random
 import time
-from background import Background
 from fruit import Pineapple
 
 
@@ -12,9 +11,16 @@ size = (SCREEN_WIDTH, SCREEN_HEIGHT)
 screen = pygame.display.set_mode(size)
 snake=0
 
+snake_position = [100, 50]
 
-snake_display=snake
+snake_body = [[100, 50],
+              [90, 50],
+              [80, 50],
+              [70, 50] ]
 
+
+direction="right"
+change_to=direction
 
 r = 50
 g = 0
@@ -23,7 +29,7 @@ b = 100
 
 
 P=Pineapple(20,30)
-B = Background(40, 40)
+
 
 
 clock=pygame.time.clock()
@@ -65,8 +71,8 @@ while run:
             if direction == 'RIGHT':
                 snake_position[0] += 10
 
-
-
+if snake_body==Pineapple:
+    snake_body+=1
 
 
 
